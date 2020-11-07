@@ -1,0 +1,34 @@
+select * from UserTable
+select * from Contact
+
+-- Inner Join is Use to Join the Common data from two or more table
+select e.Userid as 'id',e.Name as 'UserName',e.LoginName, e1.ContactId as 'Contact id', e1.C_Name as 'Name' , e1.C_PhoneNO as 'Phone No'  from UserTable e
+Join Contact e1 on e.UserId=e1.C_Userid
+
+Type of Outer Join are there 3 left,right & full
+--Left Join is Use to  Join All Matching data from the Left table to Right 
+select UserTable.UserId as 'ID', UserTable.Name ,UserTable.LoginName, Contact.ContactId,Contact.C_Name,Contact.C_PhoneNO 
+from UserTable
+Left Join Contact on UserTable.UserId=Contact.C_Userid
+
+--Right Join is Use to  Join All Matching data from the Right table to Left
+select UserTable.UserId as 'ID', UserTable.Name ,UserTable.LoginName, Contact.ContactId,Contact.C_Name,Contact.C_PhoneNO 
+from UserTable
+Right Join Contact on UserTable.UserId=Contact.C_Userid
+
+
+--Full Join use to look all the data for both the table
+select UserTable.UserId as 'ID', UserTable.Name ,UserTable.LoginName, Contact.ContactId,Contact.C_Name,Contact.C_PhoneNO 
+from UserTable
+full Join Contact on UserTable.UserId=Contact.C_Userid
+
+--What is Hash Join
+-- it also a type of Join which is use to join large tables or an instance 
+-- there are two type of Hash join 1] Build Phase 2]Probe Phase
+
+--Self join in is a join of the table to itself.This implies that each row in a table is joiied with itself
+
+--Cross join is a type of join in which a join clause is applied tp each row of the table to  every row of the other table.Also, when the Where condition is used.this --type of Join behaves as an Inner Join , and where the condition is not match or not present, it behave like a Cartesian product (The Cartesian product, also referred --to as a cross-join, returns all the rows in all the tables listed in the query. Each row in the first table is paired with all the rows in the second table. This --happens when there is no relationship defined between the two tables.)
+
+
+
